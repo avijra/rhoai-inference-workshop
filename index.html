@@ -154,9 +154,6 @@ pre code{background:none;padding:0}
 .tier-label{font-family:var(--mono);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem}
 .tier p{font-size:0.85rem;color:var(--text-dim);margin:0}
 
-.owner-badge{font-family:var(--mono);font-size:0.6rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:3px;margin-left:0.5rem}
-.owner-badge.av{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent)}
-.owner-badge.tham{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue)}
 
 footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;margin-top:4rem}
 footer p{font-size:0.75rem;color:var(--text-faint);font-family:var(--mono)}
@@ -191,14 +188,14 @@ footer p{font-size:0.75rem;color:var(--text-faint);font-family:var(--mono)}
 <nav>
   <div class="nav-inner">
     <a class="nav-link" href="#overview">Overview</a>
-    <a class="nav-link" href="#coldstart">1. Cold-Start<span class="nav-tag">AV</span></a>
+    <a class="nav-link" href="#coldstart">1. Cold-Start</a>
     <a class="nav-link" href="#storage">2. Storage</a>
     <a class="nav-link" href="#network">3. Network</a>
-    <a class="nav-link" href="#engines">4. Engines<span class="nav-tag" style="background:var(--blue)">Tham</span></a>
+    <a class="nav-link" href="#engines">4. Engines</a>
     <a class="nav-link" href="#workflow">5. Deployment</a>
-    <a class="nav-link" href="#protocols">6. Protocols<span class="nav-tag">AV</span></a>
-    <a class="nav-link" href="#access">7. Access<span class="nav-tag" style="background:var(--blue)">Tham</span></a>
-    <a class="nav-link" href="#kvcache">8. KV Cache<span class="nav-tag" style="background:var(--blue)">Tham</span></a>
+    <a class="nav-link" href="#protocols">6. Protocols</a>
+    <a class="nav-link" href="#access">7. Access</a>
+    <a class="nav-link" href="#kvcache">8. KV Cache</a>
     <a class="nav-link" href="#multitenancy">9. Multi-Tenancy</a>
   </div>
 </nav>
@@ -232,7 +229,7 @@ footer p{font-size:0.75rem;color:var(--text-faint);font-family:var(--mono)}
 
 <!-- MODULE 1: COLD-START -->
 <section id="coldstart">
-  <div class="section-label">Module 1 <span class="owner-badge av">AV</span></div>
+  <div class="section-label">Module 1</div>
   <h2>Cold-Start Performance</h2>
   <p class="lead">Bytes-on-disk to first-token latency: the complete anatomy of bringing GLM 5.1 700B FP8 online. Six phases from scheduler placement through health-probe readiness — each with measurable bottlenecks, tuning levers, and hard floors that no amount of I/O optimization can bypass.</p>
 
@@ -1068,7 +1065,7 @@ Legend: NV18 = NVLink 4th gen (900 GB/s) · PIX = PCIe · SYS = cross-NUMA</code
 
 <!-- MODULE 4: ENGINES -->
 <section id="engines">
-  <div class="section-label">Module 4 <span class="owner-badge tham">Tham</span></div>
+  <div class="section-label">Module 4</div>
   <h2>Supported Inference Engines</h2>
   <p class="lead">RHOAI 3.4 ships multiple serving runtimes. vLLM (Red Hat AI Inference Server v0.16) is the default for LLMs; llm-d v0.7.1 extends it for P/D disaggregation and KV-cache-aware routing. Engine choice affects model format support, max context, and operational complexity.</p>
 
@@ -1466,7 +1463,7 @@ oc logs -f deploy/glm-5-1-700b-fp8-predictor --init -c storage-initializer</code
 
 <!-- MODULE 6: PROTOCOLS -->
 <section id="protocols">
-  <div class="section-label">Module 6 <span class="owner-badge av">AV</span></div>
+  <div class="section-label">Module 6</div>
   <h2>Supported Protocols &amp; Streaming</h2>
   <p class="lead">From client wire format to GPU tensor execution: three protocol tiers (RHOAI-shipped, upstream vLLM, emerging), SSE streaming mechanics, and gRPC/binary payload paths through Istio and KServe.</p>
 
@@ -1742,7 +1739,7 @@ vllm serve zai-org/GLM-5-FP8 \
 
 <!-- MODULE 7: ACCESS CONTROLS -->
 <section id="access">
-  <div class="section-label">Module 7 <span class="owner-badge tham">Tham</span></div>
+  <div class="section-label">Module 7</div>
   <h2>Team-Based Access &amp; Token Rate Limiting</h2>
   <p class="lead">Models-as-a-Service (MaaS) governance: API key auth, tier-based model ACLs, Kuadrant TokenRateLimitPolicy, and OCP RBAC — enforced at the gateway before traffic reaches vLLM.</p>
 
@@ -2075,7 +2072,7 @@ roleRef:
 
 <!-- MODULE 8: KV CACHE -->
 <section id="kvcache">
-  <div class="section-label">Module 8 <span class="owner-badge tham">Tham</span></div>
+  <div class="section-label">Module 8</div>
   <h2>KV Cache Management &amp; Tiered Offloading</h2>
   <p class="lead">Every decode step attends to all prior tokens. PagedAttention, Automatic Prefix Caching, CPU/NVMe tiering, and llm-d KV-aware routing determine how many concurrent 32K-context sessions you can serve on 8× H200.</p>
 
